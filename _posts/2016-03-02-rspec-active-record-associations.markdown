@@ -86,4 +86,4 @@ This takes some additional lines of test code, but there's a shorter way to do t
 [tdd]:                    https://en.wikipedia.org/wiki/Test-driven_development
 [bdd]:                    https://en.wikipedia.org/wiki/Behavior-driven_development
 [reflect-on-association]: http://api.rubyonrails.org/classes/ActiveRecord/Reflection/ClassMethods.html#method-i-reflect_on_association
-[example-link]:           https://github.com/janis-vitols/examples/tree/master/rspec/active_record/associations/01
+[example-link]:           https://github.com/janis-vitols/examples/tree/rspec/activerecord/associations
