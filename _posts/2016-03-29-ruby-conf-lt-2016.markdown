@@ -1,0 +1,29 @@
+---
+layout: post
+title:  "RubyConf Lithuania 2016"
+date:   2016-03-29 21:10:00 +0200
+categories: ruby conference
+comments: true
+disqus_identifier: FBC668D0-81B6-4409-8388-FDE0F00E67D3
+---
+
+Hey, hey!
+
+Just wanted to share with you, that I have decided to go to "RubyConfLT 2016".
+This year conference tickets is not for free as it was last year, but last year it was
+**so cool** that I decided to go even if the tickes will be for sale.
+So as soon as I found out that RubyConfLT started to sell early bird
+tickets - I jumped in and bouth one for myself.
+
+To get more information about this event, go check out:
+
+* Home page [http://rubyconf.lt][ruby-lt-home-page]{:target="blank"}
+* Facebook [RubyConfLT 2016 event][ruby-lt-fb]{:target="blank"}
+* Twitter [@rubyconflt][ruby-lt-twitter]{:target="blank"}
+
+In case you are reading my blog post and will also be attending this conference,
+I'm open for discussions, so don't hasitate to aproach me! I look like :neckbeard: right now :joy:
+
+[ruby-lt-home-page]: http://rubyconf.lt/
+[ruby-lt-fb]:        https://www.facebook.com/events/1045307688852612/
+[ruby-lt-twitter]:   https://twitter.com/rubyconflt
