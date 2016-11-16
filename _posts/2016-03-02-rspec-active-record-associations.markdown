@@ -27,7 +27,7 @@ cheking it's API revealed that this method returns `AssociationReflection` objec
 Here are some simple examples of this approach (by the way, it took me a while to set up ActiveRecord for use without the Rails framework).
 These examples contain simple `Post` and `Comment` associations and their option check (disclaimer: *this is not code from the project, just a dummy example*).
 
-{% highlight ruby %}
+{% highlight ruby linenos %}
 describe Post do
   describe "association" do
     context "with Comments" do
@@ -55,7 +55,7 @@ describe Post do
 end
 {% endhighlight %}
 
-{% highlight ruby %}
+{% highlight ruby linenos %}
 describe Comment do
   describe "association" do
     context "with Post" do
