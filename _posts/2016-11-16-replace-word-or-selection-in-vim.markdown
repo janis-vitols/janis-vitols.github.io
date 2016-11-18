@@ -10,28 +10,31 @@ disqus_identifier: 2A8D3BAA-5B12-4A77-8990-FCFF2175C692
 Hello!
 
 My favorite IDE for Ruby development is [Vim][vim]{:target="blank"} or to be more specific [NeoVim][neovim]{:target="blank"}.
-Even this blog posts is written in NeoVim :smirk:
+Even this blog post is being written in NeoVim :smirk:
 
 ![](/images/2016/neovim-word-replacement-mappings.png)
 
-So by doing some coding I have got a lot into situations where I need to replace word or selection to something else globally in
-the same file. All the time I would struggle with typing long command like: `:%s/\<word_to_change\>/new_word/gc` to do the job.
-As you can imagine it takes some time to enter command... You need to be in `normal mode` and do `<shift> + :` to start typing command.
+When coding I often need to replace a word or a selection to something else globally in the same file.
+I would struggle typing long commands like `:%s/\<word_to_change\>/new_word/gc` to do the job.
+As you can imagine it takes some time to enter the commands...
+Additionally, you have to be in the `normal mode` and do `<shift> + :` to even start typing the command.
 
-Let's go deeper and investigate more about `substitute` command. By checking `:help :substitute` we can [see][substitute-help]{:target="blank"}
-that this command have aliases. It can be called by full name `substitute`, `su` or even shorter just `s`.
+So lets see what we can do to make word replacement easier in our editor.
+Let's go deeper and investigate more about `substitute` command itself.
+By checking `:help :substitute` we can [see][substitute-help]{:target="blank"}
+that this command has aliases. It can be called by full name `substitute`, `su` or even shorter - just `s`.
 
-Here is this command from help: `[range]s[ubstitute]/{pattern}/{string}/[flags] [count]`
+Here is this command in full glory from help: `[range]s[ubstitute]/{pattern}/{string}/[flags] [count]`
 
-As you can see in my example, I use `%` for `[range]`. If you don't specify any range search will be done in only in current line.
-By specifying `%` we will search in all lines - as in most cases we want to change word in whole file.
+As you can see in my example, I use `%` for `[range]`. If you don't specify any range, only current line will be searched.
+As in most cases we want to change the word across the whole file, we need to specify the `%`.
 
 Next I'm using the shortest alias `s` - you could go with `su` or `substitute` here also - but it would be even more typing :thumbsdown:.
 
 After command itself we need to specify `{pattern}` with which we want to find word for replacement. It must be entered between slashes.
 In case if no pattern is provided - `//` (left empty) the last search pattern will be used.
 As you can see from my example I have provided pattern like `\<word_to_change\>` - here I'm using `\<` and `\>` around our word
-to find exactly matching word `word_to_change`.
+to find an exact match for word `word_to_change`.
 
 After that we are specifying `{string}` - our new word with which we want to replace. And then after last slash `/` I use `gc` `[flags]`.
 
@@ -42,10 +45,10 @@ After that we are specifying `{string}` - our new word with which we want to rep
 
 There are few more flags, like `i` which means *case insensitive*, but I don't use other flags very much in my day to day development.
 
-So as you can see, not only you must keep a lot of these things in head, but also there are a lot of typing and it takes time. So I decided
-to create my shortcuts for this to fight this problem :muscle:.
+So, as you can see, not only must you keep a lot of these things in your mind, but also there is a lot of typing and it takes time.
+So I decided to create my shortcuts for this to fight this problem :muscle:.
 
-By some Internet investigation and checking different possible ways how to solve my problem, I have come up with these maps which
+By some Internet investigation and checking different possible ways to solve my problem, I have come up with these maps which
 I have added to my `.config/nvim/init.vim` file.
 
 {% highlight shell linenos %}
@@ -64,8 +67,11 @@ First thing is that for `normal mode` `nnoremap` `{pattern}` uses `\<` and `\>` 
 `vnoremap` I don't use them, as in most cases when I do replacement in `visual mode` I'm not searching for exact match.
 In `nnoremap` we use `<C-R><C-W>` to paste word which is under our cursor, but in `vnoremap` we use `y` (yank) command before prompt
 for new word to copy selection in buffer and then place it in our substitute command with `<C-R>"`.
-`<C-U>` in both of these maps are used to clean commandline after `:`. `let replacement = input('Some text: ')` is just our prompt with
+`<C-U>` is used in both of these maps to clean the commandline after `:`. `let replacement = input('Some text: ')` is just our prompt with
 our text here.
+
+And this is my solution to the problem, hope it will be usefull for someone else too. In case if you have any ideas how to do it even better,
+I would be interested to hear it in comments.
 
 [vim]:             http://www.vim.org/
 [neovim]:          https://neovim.io/
