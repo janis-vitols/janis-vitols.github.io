@@ -55,7 +55,7 @@ end
 {% endhighlight %}
 
 Now check what's on **LN#3** `doctest Dtest`. This is the magic line which I was telling you earlier - it runs test cases from documentation if there
-are any. To prove this, let's open `lib/dtest.ex` and implement small method with documentation which contains examples.
+are any. To prove this, let's open `lib/dtest.ex` and implement small function with documentation which contains examples.
 
 {% highlight elixir linenos %}
 defmodule Dtest do
@@ -86,7 +86,7 @@ Finished in 0.06 seconds
 {% endhighlight %}
 
 You can see that now we have `2` successful tests, but we didn't added test in the `test/dtest_test.exs` right? How awesome is that?
-To prove that Doctests are run as tests, try changing `true` to `false` inside `Examples` section of `awesome/0` method documentation.
+To prove that Doctests are run as tests, try changing `true` to `false` inside `Examples` section of `awesome/0` function documentation.
 Your code should look like this now:
 
 {% highlight elixir linenos %}
@@ -128,10 +128,10 @@ Finished in 0.07 seconds
 {% endhighlight %}
 
 And you will get failing test here :boom:. Basically failed test is telling us that `Dtest.awesome? === false` doesn't assert.
-And on next line `lhs:  true` it's telling us that `left hand side` we have `true` value (method call returned `true`).
+And on next line `lhs:  true` it's telling us that `left hand side` we have `true` value (function call returned `true`).
 
 Don't know how about you, but I was astonished with Doctests. It probably means that there will be less old/wrong documentations
-for Elixir methods because of this functionality as tests will just start to break on changes. I really enjoy it and I think I will
+for Elixir functions because of this functionality as tests will just start to break on changes. I really enjoy it and I think I will
 be using such testing approach in my next projects coding in Elixir! :)
 
 By the way, I highly suggest to check out more about [ExUnit.DocTest on hexdocs.pm][hexdocs-doctest]{:target="blank"}. You must know few
