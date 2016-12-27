@@ -137,6 +137,9 @@ be using such testing approach in my next projects coding in Elixir! :)
 By the way, I highly suggest to check out more about [ExUnit.DocTest on hexdocs.pm][hexdocs-doctest]{:target="blank"}. You must know few
 things about aligning to make them work and will find out other different ways how to use DocTest. Happy testing :smirk:!
 
+* * *
+Get source code: `git clone git@github.com:janis-vitols/examples.git --branch elixir/testing/simple-doctest-example --single-branch dtest`
+
 [elixir]:          http://elixir-lang.org/
 [install-elixir]:  http://elixir-lang.org/install.html
 [oop]:             https://en.wikipedia.org/wiki/Object-oriented_programming
