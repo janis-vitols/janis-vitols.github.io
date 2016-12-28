@@ -19,5 +19,9 @@ disqus_shortname: janis-vitols
 # Build settings
 markdown: kramdown
 
+paginate: 3
+paginate_path: "/page/:num/"
+
 gems:
 - jemoji
+- jekyll-paginate
