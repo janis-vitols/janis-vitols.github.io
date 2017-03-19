@@ -133,10 +133,12 @@ After that we should edit our Phoenix application to use these environment varia
 I would like to suggest to remove file `config/prod.secret.exs` and move this configuration to `config/prod.exs` as we will be using environment
 variables. After that don't forget to remove line `import_config "prod.secret.exs"` within `config/prod.exs`.
 
-Move `secret_key_base` option to your Endpoint configuration and use `System.get_env` and get configuration from environment variable:
+Move `secret_key_base` option to your Endpoint configuration and use `System.get_env` and get configuration from environment variable. And also
+set host configuration:
 
 {% highlight elixir linenos %}
 config :your_app, YourApp.Endpoint,
+  url: [host: System.get_env("HOSTNAME"), port: 80],
   secret_key_base: System.get_env("SECRET_KEY_BASE"),
   (... all other options here ...)
 {% endhighlight %}
